@@ -1,0 +1,12 @@
+#  Pod de test avec le ServiceAccount
+apiVersion: v1
+kind: Pod
+metadata:
+  name: monitoring-pod
+  namespace: kube-system
+spec:
+  serviceAccountName: cluster-admin-user
+  containers:
+  - name: monitoring-container
+    image: bitnami/kubectl:latest
+    command: ["sleep", "infinity"]

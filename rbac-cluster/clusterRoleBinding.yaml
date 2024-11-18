@@ -1,0 +1,13 @@
+# ClusterRoleBinding pour lier le ClusterRole au ServiceAccount
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: cluster-monitoring-binding
+subjects:
+- kind: ServiceAccount
+  name: cluster-admin-user
+  namespace: kube-system
+roleRef:
+  kind: ClusterRole
+  name: cluster-monitoring
+  apiGroup: rbac.authorization.k8s.io

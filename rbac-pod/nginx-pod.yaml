@@ -1,0 +1,10 @@
+#  Pod de test pour vérifier les permissions
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+  namespace: dev-team
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest
